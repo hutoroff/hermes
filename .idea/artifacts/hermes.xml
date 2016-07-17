@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hermes">
+    <output-path>$PROJECT_DIR$/out/artifacts/hermes</output-path>
+    <root id="archive" name="hermes.war" />
+  </artifact>
+</component>
