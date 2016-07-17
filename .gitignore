@@ -80,6 +80,7 @@ hs_err_pid*
 
 # IntelliJ
 .idea
+*.iml
 
 # mpeltonen/sbt-idea plugin
 
