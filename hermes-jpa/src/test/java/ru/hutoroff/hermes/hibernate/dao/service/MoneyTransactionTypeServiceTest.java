@@ -27,7 +27,7 @@ public class MoneyTransactionTypeServiceTest {
             moneyTransactionTypeService.delete(moneyTransactionType);
     }
 
-    private static MoneyTransactionType createMoneyTransactionType() {
+    static MoneyTransactionType createMoneyTransactionType() {
         MoneyTransactionType result = new MoneyTransactionType();
         result.setId(1);
         result.setName("dummyTransactionType");
