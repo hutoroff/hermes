@@ -1,7 +1,6 @@
 package ru.hutoroff.hermes.factory.impl.hibernate;
 
 import org.junit.Test;
-import ru.hutoroff.hermes.dao.entity.GroupDao;
 import ru.hutoroff.hermes.factory.DaoFactory;
 import ru.hutoroff.hermes.model.Group;
 
@@ -23,15 +22,14 @@ public class HibernateDaoFactoryTest {
     @Test
     public void testGetGroupDao() throws Exception {
         DaoFactory daoFactory = DaoFactory.getInstance();
-        GroupDao groupDao = daoFactory.getGroupDao();
 
         Group testGroup = new Group();
         testGroup.setId(1l);
         testGroup.setName("Test Group");
         testGroup.setCreateDate(new Date());
 
-        groupDao.persist(testGroup);
-        Group foundGroup = groupDao.findById(testGroup.getId(), false);
+        daoFactory.getGroupDao().persist(testGroup);
+        Group foundGroup = daoFactory.getGroupDao().findById(testGroup.getId(), false);
         assertEquals(testGroup.getName(), foundGroup.getName());
     }
 
