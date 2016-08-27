@@ -1,11 +1,11 @@
 package ru.hutoroff.hermes.dao.entity;
 
 import ru.hutoroff.hermes.dao.GenericDao;
-
-import java.io.Serializable;
+import ru.hutoroff.hermes.model.Currency;
 
 /**
+ * Currency entity dao
  * Created by hutoroff on 22.08.16.
  */
-public interface CurrencyDao<Currency, Integer extends Serializable> extends GenericDao<Currency, Integer> {
+public interface CurrencyDao extends GenericDao<Currency, Integer> {
 }

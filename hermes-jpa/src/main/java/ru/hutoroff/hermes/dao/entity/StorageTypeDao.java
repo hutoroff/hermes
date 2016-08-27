@@ -1,11 +1,11 @@
 package ru.hutoroff.hermes.dao.entity;
 
 import ru.hutoroff.hermes.dao.GenericDao;
-
-import java.io.Serializable;
+import ru.hutoroff.hermes.model.StorageType;
 
 /**
+ * StorageType entity dao
  * Created by hutoroff on 22.08.16.
  */
-public interface StorageTypeDao<StorageType, Integer extends Serializable> extends GenericDao<StorageType, Integer> {
+public interface StorageTypeDao extends GenericDao<StorageType, Integer> {
 }

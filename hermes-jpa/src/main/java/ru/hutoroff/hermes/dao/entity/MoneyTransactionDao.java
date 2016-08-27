@@ -1,11 +1,11 @@
 package ru.hutoroff.hermes.dao.entity;
 
 import ru.hutoroff.hermes.dao.GenericDao;
-
-import java.io.Serializable;
+import ru.hutoroff.hermes.model.MoneyTransaction;
 
 /**
+ * MoneyTransaction entity dao
  * Created by hutoroff on 22.08.16.
  */
-public interface MoneyTransactionDao<MoneyTransaction, Long extends Serializable> extends GenericDao<MoneyTransaction, Long> {
+public interface MoneyTransactionDao extends GenericDao<MoneyTransaction, Long> {
 }

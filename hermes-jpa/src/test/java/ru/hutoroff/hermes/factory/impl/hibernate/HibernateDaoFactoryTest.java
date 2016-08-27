@@ -1,36 +1,70 @@
 package ru.hutoroff.hermes.factory.impl.hibernate;
 
+import org.junit.Before;
 import org.junit.Test;
+import ru.hutoroff.hermes.dao.entity.*;
 import ru.hutoroff.hermes.factory.DaoFactory;
-import ru.hutoroff.hermes.model.Group;
 
-import java.util.Date;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
+ * DAO implementation for Hibernate
  * Created by hutoroff on 23.08.16.
  */
 public class HibernateDaoFactoryTest {
 
-    /*@Test
-    public void testGetAccountDao() throws Exception {
-        DaoFactory daoFactory = DaoFactory.getInstance(DaoFactory.HIBERNATE);
-        AccountDao accountDao = daoFactory.getAccountDao();
-    }*/
+    private DaoFactory daoFactory;
 
-    @Test
-    public void testGetGroupDao() throws Exception {
-        DaoFactory daoFactory = DaoFactory.getInstance();
-
-        Group testGroup = new Group();
-        testGroup.setId(1l);
-        testGroup.setName("Test Group");
-        testGroup.setCreateDate(new Date());
-
-        daoFactory.getGroupDao().persist(testGroup);
-        Group foundGroup = daoFactory.getGroupDao().findById(testGroup.getId(), false);
-        assertEquals(testGroup.getName(), foundGroup.getName());
+    @Before
+    public void setUp() throws Exception {
+        daoFactory = DaoFactory.getInstance(DaoFactory.HIBERNATE);
     }
 
+    @Test
+    public void getAccountDaoTest() throws Exception {
+        AccountDao accountDao = daoFactory.getAccountDao();
+        assertNotNull(accountDao);
+    }
+
+    @Test
+    public void getCurrencyDaoTest() throws Exception {
+        CurrencyDao currencyDao = daoFactory.getCurrencyDao();
+        assertNotNull(currencyDao);
+    }
+
+    @Test
+    public void getGroupDaoTest() throws Exception {
+        GroupDao groupDao = daoFactory.getGroupDao();
+        assertNotNull(groupDao);
+    }
+
+    @Test
+    public void getMoneyTransactionDaoTest() throws Exception {
+        MoneyTransactionDao moneyTransactionDao = daoFactory.getMoneyTransactionDao();
+        assertNotNull(moneyTransactionDao);
+    }
+
+    @Test
+    public void getMoneyTransactionTypeDaoTest() throws Exception {
+        MoneyTransactionTypeDao moneyTransactionTypeDao = daoFactory.getMoneyTrnsactionTypeDao();
+        assertNotNull(moneyTransactionTypeDao);
+    }
+
+    @Test
+    public void getStorageDaoTest() throws Exception {
+        StorageDao storageDao = daoFactory.getStorageDao();
+        assertNotNull(storageDao);
+    }
+
+    @Test
+    public void getStorageTypeTest() throws Exception {
+        StorageTypeDao storageTypeDao = daoFactory.getStorageTypeDao();
+        assertNotNull(storageTypeDao);
+    }
+
+    @Test
+    public void getUserDaoTest() throws Exception {
+        UserDao userDao = daoFactory.getUserDao();
+        assertNotNull(userDao);
+    }
 }

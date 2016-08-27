@@ -2,11 +2,11 @@ package ru.hutoroff.hermes.dao.entity.impl.hibernate;
 
 import ru.hutoroff.hermes.dao.entity.StorageTypeDao;
 import ru.hutoroff.hermes.dao.impl.hibernate.GenericHibernateDao;
-
-import java.io.Serializable;
+import ru.hutoroff.hermes.model.StorageType;
 
 /**
+ * DAO implemented for Hibernate
  * Created by hutoroff on 22.08.16.
  */
-public class StorageTypeHibernateDao<StorageType, Integer extends Serializable> extends GenericHibernateDao implements StorageTypeDao {
+public class StorageTypeHibernateDao extends GenericHibernateDao<StorageType, Integer> implements StorageTypeDao {
 }

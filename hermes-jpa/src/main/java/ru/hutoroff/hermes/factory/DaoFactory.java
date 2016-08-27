@@ -5,6 +5,7 @@ import ru.hutoroff.hermes.exception.DataBaseException;
 import ru.hutoroff.hermes.factory.impl.hibernate.HibernateDaoFactory;
 
 /**
+ * Data Access Object
  * Created by hutoroff on 22.08.16.
  */
 public abstract class DaoFactory {
@@ -19,11 +20,7 @@ public abstract class DaoFactory {
     }
 
     public static DaoFactory getInstance() throws DataBaseException {
-        try {
-            return (DaoFactory) HIBERNATE.newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new DataBaseException("Could not create DAO factory. Caused by: ", e);
-        }
+        return DaoFactory.getInstance(DaoFactory.HIBERNATE);
     }
 
     public abstract AccountDao getAccountDao();
