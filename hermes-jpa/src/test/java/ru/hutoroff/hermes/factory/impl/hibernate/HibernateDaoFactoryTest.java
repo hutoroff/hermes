@@ -7,10 +7,6 @@ import ru.hutoroff.hermes.factory.DaoFactory;
 
 import static org.junit.Assert.assertNotNull;
 
-/**
- * DAO implementation for Hibernate
- * Created by hutoroff on 23.08.16.
- */
 public class HibernateDaoFactoryTest {
 
     private DaoFactory daoFactory;
